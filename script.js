@@ -12,10 +12,10 @@ fetch('https://api.data.gov.sg/v1/environment/psi')
     
     // create timestamp
     .then(generateTimestamp => {
-        var timestamp = new Date(psiData.timestamp)
+        let timestamp = new Date(psiData.timestamp);
         $("#psiTimestamp").append(
-            "<strong>Retrieved at:</strong> " + timestamp
-        )
+            "<strong>Retrieved at:</strong> " + timestamp.toLocaleString()
+        );
     })
     
     // create table header
@@ -30,7 +30,7 @@ fetch('https://api.data.gov.sg/v1/environment/psi')
                 "<th>East</th>",
                 "<th>West</th>",
             "</tr>",
-        )
+        );
     })
     
     // create table content from psi data
@@ -47,7 +47,7 @@ fetch('https://api.data.gov.sg/v1/environment/psi')
                     "<td>" + reading.west + "</td>",
                 "</tr>"
             )
-        })
+        });
     })
     
     // for error catching
